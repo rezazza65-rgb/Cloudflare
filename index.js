@@ -341,7 +341,7 @@ const QRIntelligence = {
     // Black QR pattern (simplified)
     ctx.fillStyle = '#000000';
     const pattern = [
-      [1,1,1,1,1,1,1,1],
+      [1,1,1,1,1,1,1],
       [1,0,0,0,0,0,1],
       [1,0,1,1,1,0,1],
       [1,0,1,1,1,0,1],
@@ -904,6 +904,12 @@ async function handleUserPanel(request, userID, hostName, proxyAddress, userData
       box-sizing: border-box;
     }
     
+    @keyframes gradient-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
     body {
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       background: linear-gradient(135deg, #0a0e17 0%, #111827 25%, #0d1321 50%, #0a0e17 75%, #111827 100%);
@@ -912,12 +918,6 @@ async function handleUserPanel(request, userID, hostName, proxyAddress, userData
       color: var(--text);
       min-height: 100vh;
       padding: 20px;
-    }
-    
-    @keyframes gradient-shift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
     
     .container {
@@ -1381,7 +1381,7 @@ async function handleUserPanel(request, userID, hostName, proxyAddress, userData
               <div class="validation-icon">\${rec.type === 'error' ? '✗' : rec.type === 'warning' ? '⚠' : '💡'}</div>
               <div class="validation-text">
                 <div class="validation-message">\${rec.message}</div>
-                \${rec.fix ? \`<div style="margin-top: 5px; font-size: 12px; color: #64748b;">Fix: \${rec.fix}</div>\` : ''}
+                \${rec.fix ? \`<div style="margin-top:5px; font-size: 12px; color: #64748b;">Fix: \${rec.fix}</div>\` : ''}
               </div>
             </div>
           </div>
